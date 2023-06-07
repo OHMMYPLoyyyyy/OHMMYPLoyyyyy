@@ -1,77 +1,84 @@
-![Project thumbnail](./thumbnail.png)
-<!DOCTYPE html>
-<html lang="en">
+/* ======================== */
+/* 
+    Ignore the following styles. They are not important to achieve the effect.
+    I'm only using them for looks (overall page background/font styles/centering content).
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01</title>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-    <div class="icon" data-number="5">
-        <i class="ri-notification-4-fill"></i>
-    </div>
-</body>
-
-</html>
-/* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-/* General styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #090909;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+	font-family: 'Poppins', sans-serif;
+	background-color: #1A1D24;
+	display: grid;
+	place-items: center;
+	height: 100vh;
 }
 
-/* General styles end */
+/* ======================== */
+.icons {
+	display: flex;
+	column-gap: 25px;
+}
 .icon {
-    position: relative;
-    font-size: 54px;
-    color: #fff;
-    transform-origin: top;
-    animation: anim 1s forwards;
+	display: inline-flex;
+	width: 60px;
+	height: 60px;
+	text-decoration: none;
+	font-size: 26px;
+	color: #fff;
+	border-radius: 50%;
+	outline: 2px solid #fff;
+	transition-property: outline-offset, outline-color, background-color;
+	transition-duration: 0.25s;
 }
-
-.icon::before {
-    content: attr(data-number);
-    position: absolute;
-    top: 10px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #7EFFB2;
-    font-size: 14px;
-    color: #090909;
-    display: grid;
-    place-items: center;
-    border: 2px solid #090909;
-    border-radius: 50%;
+.icon:hover {
+	outline-offset: 4px;
 }
-
-@keyframes anim {
-    10% {
-        rotate: 15deg;
-    }
-
-    20% {
-        rotate: -15deg;
-    }
-
-    30% {
-        rotate: 15deg;
-    }
-
-    50% {
+.icon i {
+	margin: auto;
+}
+.icon:hover i {
+	animation: shake 0.25s;
+}
+.icon--instagram:hover {
+	background-image: radial-gradient(
+		circle at 30% 107%,
+		#fdf497 0%,
+		#fdf497 5%,
+		#fd5949 45%,
+		#d6249f 60%,
+		#285aeb 90%
+	);
+	outline-color: #a02d76;
+}
+.icon--twitter:hover {
+	background-color: #1da1f2;
+	outline-color: #1da1f2;
+}
+.icon--linkedin:hover {
+	background-color: #0077b5;
+	outline-color: #0077b5;
+}
+.icon--github:hover {
+	background-color: #2ea44f;
+	outline-color: #2ea44f;
+}
+@keyframes shake {
+	10% {
+		transform: rotate(15deg);
+	}
+	20% {
+		transform: rotate(-15deg);
+	}
+	30% {
+		transform: rotate(15deg);
+	}
+	40% {
+		transform: rotate(-15deg);
+	}
+}
